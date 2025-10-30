@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Diss Track Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎤 AI Diss Track Generator</h1>
+            <p class="subtitle">Drop the mic. Let AI handle the rest. 100% Free, no sign-up required.</p>
+        </header>
+
+        <div class="legends-section">
+            <h2 class="legends-title">LEGENDS</h2>
+        </div>
+        <div class="artists-gallery">
+            <div class="artist-card">
+                <div class="artist-image-container">
+                    <img src="ghibli-eminem.jpg" alt="Eminem" class="artist-image ghibli-eminem" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="artist-placeholder" style="display: none;">E</div>
+                </div>
+                <p class="artist-name">Eminem</p>
+            </div>
+            <div class="artist-card">
+                <div class="artist-image-container">
+                    <img src="ghibli-juice-wrld.jpg" alt="Juice WRLD" class="artist-image ghibli-juice" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="artist-placeholder" style="display: none;">J</div>
+                </div>
+                <p class="artist-name">Juice WRLD</p>
+            </div>
+            <div class="artist-card">
+                <div class="artist-image-container">
+                    <img src="ghibli-kanye.jpg" alt="Kanye West" class="artist-image ghibli-kanye" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="artist-placeholder" style="display: none;">K</div>
+                </div>
+                <p class="artist-name">Kanye West</p>
+            </div>
+            <div class="artist-card">
+                <div class="artist-image-container">
+                    <img src="ghibli-drake.jpg" alt="Drake" class="artist-image ghibli-drake" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="artist-placeholder" style="display: none;">D</div>
+                </div>
+                <p class="artist-name">Drake</p>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="prompt-section">
+                    <label for="prompt-input">Who do you want to diss?</label>
+                    <textarea 
+                        id="prompt-input" 
+                        placeholder="Enter your target or topic for the diss track... (e.g., 'a lazy roommate who never cleans', 'competition in my field', etc.)"
+                        rows="4"
+                    ></textarea>
+                </div>
+
+                <div class="profanity-section">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="profanity-checkbox">
+                        <span>Allow profane language</span>
+                    </label>
+                </div>
+
+                
+
+                <button id="generate-btn" class="generate-button">
+                    <span class="btn-text">Generate Diss Track</span>
+                    <span class="btn-loader" style="display: none;">
+                        <span class="spinner"></span>
+                        Spitting fire...
+                    </span>
+                </button>
+            </div>
+
+            <div class="output-section" id="output-section" style="display: none;">
+                <div class="output-header">
+                    <h2>🔥 Your Diss Track</h2>
+                    <button id="copy-btn" class="copy-button" title="Copy to clipboard">
+                        📋 Copy
+                    </button>
+                </div>
+                <div id="diss-track-output" class="diss-track-output"></div>
+                <div class="audio-controls">
+                    <button id="rap-btn" class="rap-button">
+                        <span class="rap-btn-text">🎤 Rap It with Beat</span>
+                        <span class="rap-btn-loading" style="display: none;">
+                            <span class="spinner"></span>
+                            Loading...
+                        </span>
+                    </button>
+                    <div id="audio-controls" class="audio-player-controls" style="display: none;">
+                        <button id="play-pause-btn" class="play-pause-button">⏸️ Pause</button>
+                        <button id="stop-btn" class="stop-button">⏹️ Stop</button>
+                        <div class="volume-control">
+                            <label for="volume-slider">🔊 Volume:</label>
+                            <input type="range" id="volume-slider" min="0" max="100" value="70" class="volume-slider">
+                        </div>
+                    </div>
+                </div>
+                <button id="download-btn" class="download-button">💾 Download as TXT</button>
+            </div>
+
+            <div class="error-message" id="error-message" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
